@@ -1,15 +1,16 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Menu } from "antd";
 import { MailOutlined, AppstoreOutlined } from "@ant-design/icons";
 
 const NavBar = () => {
   return (
-    <Menu onClick={this.handleClick} mode="horizontal">
-      <Menu.Item key="mail" icon={<MailOutlined />}>
-        Navigation One
+    <Menu  mode="horizontal">
+      <Menu.Item  key="mail" icon={<MailOutlined />}>            
+        <Link to="/posts"> Posts</Link>
       </Menu.Item>
-      <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-        Navigation Two
+      <Menu.Item  key="app"  icon={<AppstoreOutlined />}>
+      <Link to="/post/15"> Single Post</Link> 
       </Menu.Item>
     </Menu>
   );

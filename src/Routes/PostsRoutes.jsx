@@ -1,4 +1,6 @@
-import { Route } from "react-reouter-dom";
+import { Route } from "react-router-dom";
+import Posts from "../Pages/Posts/Posts";
+import Post from "../Pages/Posts/Post";
 
 const PostsRoutes = () => {
   return (
