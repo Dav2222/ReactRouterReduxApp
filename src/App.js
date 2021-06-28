@@ -1,17 +1,29 @@
-import 'antd/dist/antd.css'
+import "antd/dist/antd.css";
 import NavBar from "./components/NavBar";
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./Routes";
+import { Layout, Row, Col } from "antd";
+const { Header, Footer, Content } = Layout;
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="App">
-        <NavBar />
-        <Routes/>
-      </div>
+      <Layout>
+        <Header>
+          <NavBar />
+        </Header>
+        <Content>
+          <Row justify="center">
+            <Col span={22} >
+              <Routes />
+            </Col>
+          </Row>
+        </Content>
+
+        <Footer>Footer</Footer>
+      </Layout>
     </Router>
   );
-}
+};
 
 export default App;
