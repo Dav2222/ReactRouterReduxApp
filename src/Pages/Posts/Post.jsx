@@ -5,9 +5,10 @@ const Post = (props) => {
 
   return (
     <>
-      <h1>
-        <Link to={`/posts/`}> Back to Posts</Link>Post {postId}
-      </h1>
+      <h1>Post {postId}</h1>
+      <h2>
+        <Link to={`/posts/`}> Back to Posts</Link>
+      </h2>
     </>
   );
 };
