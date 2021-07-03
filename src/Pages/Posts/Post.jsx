@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import { Row, Col, Card } from "antd";
+
+import { Row, Col, Card, Tooltip, List } from "antd";
+
 
 const Post = (props) => {
   const postId = props.match.params.id;
@@ -9,6 +11,7 @@ const Post = (props) => {
   const [postData, setPostData] = useState({});
   const [commentsData, setCommentsData] = useState([]);
   const [user, setUser] = useState({});
+
   const fetchData = async (postId) => {
     const post_req = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${postId}`
@@ -45,6 +48,22 @@ const Post = (props) => {
             <Col span={18}>
               <h2>{postData.title}</h2>
               <p>{postData.body}</p>
+
+              <List
+                header={<div>Header</div>}
+                footer={<div>Footer</div>}
+                bordered
+                dataSource={commentsData}
+                renderItem={(item) => (
+                  <List.Item>
+                    <Tooltip title={item.email} color="cyan">
+                      {item.name}
+                    </Tooltip>
+                    {item.body}
+                  </List.Item>
+                )}
+              />
+
             </Col>
             <Col span={6}>
               <Card title={user.name} bordered={false} style={{ width: 300 }}>
