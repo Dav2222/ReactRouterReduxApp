@@ -6,11 +6,11 @@ import { MailOutlined, AppstoreOutlined } from "@ant-design/icons";
 const NavBar = () => {
   return (
     <Menu mode="horizontal">
-      <Menu.Item key="mail" icon={<MailOutlined />}>
+      <Menu.Item key="posts" icon={<MailOutlined />}>
         <Link to="/posts"> Posts</Link>
       </Menu.Item>
-      <Menu.Item key="app" icon={<AppstoreOutlined />}>
-        <Link to="/post/15">Single Post</Link>
+      <Menu.Item key="favorit" icon={<AppstoreOutlined />}>
+        <Link to="/favorites">Favorites page</Link>
       </Menu.Item>
     </Menu>
   );
