@@ -1,9 +1,21 @@
+import {connect} from "react-redux";
+import {createResetFavorite} from "../../store/actions"
 
-
-export default function Favorites() {
+ const Favorites = (props) => {
    return (
       <div>
-         Favorites list
+        <h1> Favorites list</h1>
+        <button type = "button" onClick = {() => props.dispatch(createResetFavorite())}>Reset All</button>
+        {props.favorites.map((e, index) => 
+        <p key = {index}>{e.name}</p>
+        )}
       </div>
    )
 }
+
+const mapStateToProps = (state) => ({
+   favorites: state.favoritsList
+ })
+
+
+export default connect(mapStateToProps)(Favorites)
