@@ -79,10 +79,11 @@ const Posts = (props) => {
       key: "x",
       render: (_, record) => (
         <>
-          <Link to={`/post/${record.key}`}>Preview</Link>
+          <Link  to={`/post/${record.key}`}>Preview</Link>
           <Popconfirm
             title="Sure to delete?"
-            onConfirm={() => alert(record.key)}
+            onConfirm={() => 
+              alert(record.key)}
           >
             <a>Delete</a>
           </Popconfirm>
